@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerhealth : MonoBehaviour
 {
@@ -22,7 +23,15 @@ public class playerhealth : MonoBehaviour
     }
     
     public void DamagePlayer(int Hurt, Vector3 direction)
-            {
-                currentHealth -= Hurt;
-            } 
+    {
+        currentHealth -= Hurt;
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            gameObject.SetActive(false);
+            SceneManager.LoadScene(0);
+        }
+
+
+    }
 }
