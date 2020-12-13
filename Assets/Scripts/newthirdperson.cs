@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+
 public class newthirdperson : MonoBehaviour
 {
+
     [SerializeField]
     private float _moveSpeed = 5f;
     [SerializeField]
